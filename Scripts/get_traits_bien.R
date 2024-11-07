@@ -26,7 +26,7 @@ for(i in 1:NROW(spp))
   if (ok[i]==TRUE){next}
   
   print(paste0(i, ' - ',spp$Binomio[i]))
-  trait_tmp <- BIEN_trait_species(spp$Binomio[i])  
+  trait_tmp <- BIEN::BIEN_trait_species(spp$Binomio[i])  
   
   if(NROW(trait_tmp)>0)
   {
@@ -134,8 +134,40 @@ write.csv(bien_sel_data_traits, file.name.res, row.names = FALSE, fileEncoding =
             row.names = FALSE, 
             fileEncoding = "UTF-8", 
             na = "")
-  
-  
-  
   }
 
+{
+  file_name <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\BIEN_SinBiAM_in_Amazon_final.csv'
+  BEIN_Tree_Trait <- readr::read_csv(file_name, 
+                                     locale = readr::locale(encoding = "UTF-8"),
+                                     show_col_types = FALSE)
+  
+  NROW(BEIN_Tree_Trait)
+  colnames(BEIN_Tree_Trait)
+  
+  BEIN_Tree_Trait$sourceID
+  
+  x <- sqldf::sqldf("SELECT DISTINCT traitID, COUNT(sourceID)
+                        FROM BEIN_Tree_Trait
+                        GROUP BY traitID
+                        ORDER BY COUNT(sourceID)")
+  file.name.res <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\BIEN_SinBiAM_sumario_traits.csv'
+  write.csv(x, 
+            file.name.res, 
+            row.names = FALSE, 
+            fileEncoding = "UTF-8", 
+            na = "")
+  
+ 
+  x <- sqldf::sqldf("SELECT DISTINCT species, COUNT(sourceID)
+                        FROM BEIN_Tree_Trait
+                        GROUP BY species
+                        ORDER BY COUNT(sourceID)")
+  file.name.res <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\BIEN_SinBiAM_sumario_species.csv'
+  write.csv(x, 
+            file.name.res, 
+            row.names = FALSE, 
+            fileEncoding = "UTF-8", 
+            na = "")
+  
+}
