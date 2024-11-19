@@ -37,7 +37,13 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
 
 # Barros et all 2015
 {
-  name_file <- paste0(path_data, '\\Barros et all 2015.csv')
+  # igual à Barros et all 2019
+}
+
+
+# Barros et all 2019
+{
+  name_file <- paste0(path_data, '\\Barros et all 2019.csv')
   spp <- readr::read_csv(name_file, 
                          locale = readr::locale(encoding = "UTF-8"),
                          show_col_types = FALSE)
@@ -48,7 +54,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   
   col_ini <- 17
   
-  sourceID <- 'Barros et all 2015'
+  sourceID <- 'Barros et all 2019'
   
   i=1
   for(i in 1:NROW(loc))
@@ -91,7 +97,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
                                decimalLongitude	= x$decimalLongitude,
                                altitude	= rep('',NROW(x)),
                                typeVegatation = x$typeVegatation,
-                               notes = paste0('meam, n:',x$n),
+                               notes = paste0('mean, n:',x$n),
                                stringsAsFactors = FALSE
                     ))
       
@@ -104,10 +110,6 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   View(data)
 }
 
-# Barros et all 2019
-{
-  # csv
-}
 
 # Bittencourt et all 2020
 {
@@ -362,5 +364,5 @@ Ziegler et all 2023
 
 
 
-file.name.res <- 'C:\\Dados\\SinBiAM\\data\\data_traits.csv'
+file.name.res <- paste0(path_data,'\\compilation model table.csv')
 write.csv(data, file.name.res, row.names = FALSE, fileEncoding = "UTF-8", na = "")
