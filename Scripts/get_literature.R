@@ -25,28 +25,36 @@ data <- data.frame(
   decimalLongitude	= '',
   altitude	= '',
   typeVegatation = '',
+  notes = '',
   stringsAsFactors = FALSE)[-1,] 
 
-# Tavares_et_al_2023
+path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bibliografia'
+
+# Araujo et all 2024
 {
-  name_file <- 'C:\\Dados\\SinBiAM\\Artigos\\Tavares et all 2023 - Data_package_Tavares_et_al_2023\\Data_package_Tavares_et_al_2023\\Data\\Hydraulic_traits_dataset_TAVARES_et_al_2023.csv'
+  # email
+}
+
+# Barros et all 2015
+{
+  name_file <- paste0(path_data, '\\Barros et all 2015.csv')
   spp <- readr::read_csv(name_file, 
                          locale = readr::locale(encoding = "UTF-8"),
                          show_col_types = FALSE)
   
-  loc <- spp$Cluster %>% unique()
+  loc <- spp$Site %>% unique()
   
   col <- colnames(spp)
   
-  col_ini <- 7
+  col_ini <- 17
   
-  sourceID <- 'Tavares_et_al_2023'
+  sourceID <- 'Barros et all 2015'
   
   i=1
   for(i in 1:NROW(loc))
   {
     
-    x <- spp %>% dplyr::filter(Cluster == loc[i])
+    x <- spp %>% dplyr::filter(Site == loc[i])
     
     ii = 7
     for ( ii in col_ini:NROW(col))
@@ -66,23 +74,24 @@ data <- data.frame(
                                family	= x$Family,
                                species	= x$Species,
                                sourceID	= rep(sourceID, NROW(x)),
-                               initialYearSampling	= rep('',NROW(x)),
-                               initialMonthSampling	= rep('',NROW(x)),
+                               initialYearSampling	= ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
                                initialDaySampling	= rep('',NROW(x)),
                                finalYearSampling	= rep('',NROW(x)),
                                finalMonthSampling	= rep('',NROW(x)),
                                finalDaySampling	= rep('',NROW(x)),
-                               seasons	= rep('',NROW(x)),
+                               seasons	= x$season,
                                weatherAnomaly	= rep('',NROW(x)),
                                lifeStage	= rep('adult',NROW(x)),
-                               country	= rep('',NROW(x)),
-                               stateProvince = rep('',NROW(x)),
-                               municipality = rep('',NROW(x)),
-                               localidade	= rep(loc[i],NROW(x)),
-                               decimalLatitude	= rep('',NROW(x)),
-                               decimalLongitude	= rep('',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
                                altitude	= rep('',NROW(x)),
-                               typeVegatation = x$Forest,
+                               typeVegatation = x$typeVegatation,
+                               notes = paste0('meam, n:',x$n),
                                stringsAsFactors = FALSE
                     ))
       
@@ -91,13 +100,24 @@ data <- data.frame(
     
     
   }
+  
   View(data)
 }
 
-
-# Brum_et_al_2018_Average_Hydraulic_Traits
+# Barros et all 2019
 {
-  name_file <- 'C:\\Dados\\SinBiAM\\Artigos\\Brum_et_al_2018_Average_Hydraulic_Traits.csv'
+  # csv
+}
+
+# Bittencourt et all 2020
+{
+  # csv
+}
+
+# ok - Brum et all 2018
+{
+  
+  name_file <- paste0(path_data, '\\Brum et all 2018.csv')
   spp <- readr::read_csv(name_file, 
                          locale = readr::locale(encoding = "UTF-8"),
                          show_col_types = FALSE)
@@ -163,9 +183,21 @@ data <- data.frame(
 }
 
 
-# Garcia_et_al_2023
+# Brum et all 2023
 {
-  name_file <- 'C:\\Dados\\SinBiAM\\Artigos\\Garcia et all 2023 - mg.6.2.csv'
+  # in Brum et all 2018 (2019)
+}
+
+
+# Garcia et all 2021
+{
+  # Flávia
+}
+
+
+# Garcia et all 2023
+{
+  name_file <- paste0(path_data, '\\Garcia et all 2023.csv')
   spp <- readr::read_csv(name_file, 
                          locale = readr::locale(encoding = "UTF-8"),
                          show_col_types = FALSE)
@@ -190,7 +222,7 @@ data <- data.frame(
       value <- x[,col[ii]] %>% as.vector() %>% data.frame()
       
       colnames(value) <- 'value'
-
+      
       data <- rbind(data, 
                     data.frame(traitID	= col[ii],
                                unitOfMeasure	= '',
@@ -229,6 +261,106 @@ data <- data.frame(
   }
   View(data)
 }
+
+# Mattos el all 2023
+{
+  # Barros et all 2019 & Oliveira et all 2019
+}
+
+# Oliveira et all 2019
+{
+  # tabela media csv
+}
+
+# Powell et all 2017
+{
+  # email
+}
+
+# Rowland et all 2015
+{
+  # email
+}
+
+# Tavares et all 2023
+{
+  name_file <- paste0(path_data, '\\Tavares et all 2023.csv')
+  spp <- readr::read_csv(name_file, 
+                         locale = readr::locale(encoding = "UTF-8"),
+                         show_col_types = FALSE)
+  
+  loc <- spp$Cluster %>% unique()
+  
+  col <- colnames(spp)
+  
+  col_ini <- 7
+  
+  sourceID <- 'Tavares_et_al_2023'
+  
+  i=1
+  for(i in 1:NROW(loc))
+  {
+    
+    x <- spp %>% dplyr::filter(Cluster == loc[i])
+    
+    ii = 7
+    for ( ii in col_ini:NROW(col))
+    {
+      value <- x[,col[ii]] %>% as.vector() %>% data.frame()
+      
+      colnames(value) <- 'value'
+      
+      
+      data <- rbind(data, 
+                    data.frame(traitID	= col[ii],
+                               unitOfMeasure	= '',
+                               methodsID	= rep('',NROW(x)),
+                               
+                               value	= value[,1],
+                               
+                               family	= x$Family,
+                               species	= x$Species,
+                               sourceID	= rep(sourceID, NROW(x)),
+                               initialYearSampling	= rep('',NROW(x)),
+                               initialMonthSampling	= rep('',NROW(x)),
+                               initialDaySampling	= rep('',NROW(x)),
+                               finalYearSampling	= rep('',NROW(x)),
+                               finalMonthSampling	= rep('',NROW(x)),
+                               finalDaySampling	= rep('',NROW(x)),
+                               seasons	= rep('',NROW(x)),
+                               weatherAnomaly	= rep('',NROW(x)),
+                               lifeStage	= rep('adult',NROW(x)),
+                               country	= rep('',NROW(x)),
+                               stateProvince = rep('',NROW(x)),
+                               municipality = rep('',NROW(x)),
+                               localidade	= rep(loc[i],NROW(x)),
+                               decimalLatitude	= rep('',NROW(x)),
+                               decimalLongitude	= rep('',NROW(x)),
+                               altitude	= rep('',NROW(x)),
+                               typeVegatation = x$Forest,
+                               stringsAsFactors = FALSE
+                    ))
+      
+      
+    } 
+    
+    
+  }
+  View(data)
+}
+
+Ziegler et all 2023
+
+
+
+
+
+
+# Tavares_et_al_2023
+
+
+
+
 
 file.name.res <- 'C:\\Dados\\SinBiAM\\data\\data_traits.csv'
 write.csv(data, file.name.res, row.names = FALSE, fileEncoding = "UTF-8", na = "")
