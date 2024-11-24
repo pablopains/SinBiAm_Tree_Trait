@@ -1,29 +1,57 @@
-" Family","Species","Habitat association","Mean HAND position (m)","Mean HAND position (m)","Mean P50 (MPa) ","Mean P (mg kg1)"
-"Annonaceae","Guatteria olivacea","generalist","20.4","(5.6–41.6)","-2.57","2.90"
-"Annonaceae","Guatteria megalophylla","valley","3.3","(1.5–5.1)","-2.21","3.80"
-"Burseraceae","Protium gallosum","plateau","26.2","(6.2–37.9)","-2.54","3.43"
-"Burseraceae","Protium nitidifolium","plateau","25.7","(8.4–39.8)","-2.91","3.31"
-"Burseraceae","Protium trifoliolatum","plateau","23.2","(5.3–39.5)","-1.33","3.48"
-"Burseraceae","Protium hebetatum","generalist","19.49","(5.3–38.6)","-3.10","3.09"
-"Burseraceae","Protium grandifolium","valley","10.80","(1.4–15.1)","-1.25","3.01"
-"Burseraceae","Tetragastris panamensis","plateau","25.7","(10.8–41.6)","-1.83","3.35"
-"Chrysobalanaceae","Licania heteromorfa","plateau","26.1","(6.2–39.8)","-3.33","3.24"
-"Chrysobalanaceae","Licania longistyla","generalist","15.2","(1.6–38.5)","-3.11","2.65"
-"Chrysobalanaceae","Licania lata","valley","8.5","(1.7–21.1)","-1.71","3.16"
-"Fabaceae","Eperua duckeana","valley","7.2","(1.6–14.4)","-0.88","3.12"
-"Fabaceae","Swartzia recurva","plateau","25.9","(5.8–43.6)","-3.66","3.18"
-"Fabaceae","Swartzia tomentifera","plateau","24.9","(5.3–39.3)","-3.64","3.44"
-"Fabaceae","Swartzia ulei","valley","15.1","(1.7–34.7)","-2.20","3.69"
-"Fabaceae","Zygia racemosa","plateau","28.2","(8.5–41.6)","-4.10","3.28"
-"Fabaceae","Zygia ramiflora","plateau","29.8","(8.7–47.4)","-1.76","3.52"
-"Lecythidaceae","Eschweilera pseudodecolorans","plateau","29.7","(12.6–43.7)","-3.25","3.24"
-"Lecythidaceae","Eschweilera truncata","plateau","25.3","(8.0–41.4)","-2.43","3.22"
-"Lecythidaceae","Eschweilera coriacea","generalist","17.1","(2.8–37.5)","-1.72","3.32"
-"Moraceae","Helianthostylis sprucei","plateau","26.5","(8.4–41.6)","-4.04","3.07"
-"Myristicaceae","Virola venosa","plateau","27.68","(8.7–41.4)","-0.84","3.24"
-"Myristicaceae","Iryanthera juruensis","valley","14.3","(1.8–37.1)","-0.67","3.67"
-"Myristicaceae","Iryanthera ulei","valley","16.2","(2.3–38.2)","-0.56","4.15"
-"Rutaceae","Adiscanthus fusciflorus","valley","2.2","(1.4–4.7)","-1.08","3.56"
-"Sapotaceae","Micropholis williamii","plateau","23.4","(6.2–42.8)","-1.78","3.22"
-"Sapotaceae","Chrysophyllum sanguinolentum","valley","9.5","(1.6–22.4)","-2.47","3.44"
-"Violaceae","Rinorea racemosa","plateau","26.2","(5.7–41.6)","-4.18","3.33"
+" Family","Species","Habitat association","Country","State_Province","County","Localidade","decimalLatitude","decimalLongitude","initialYearSampling","initialMonthSampling","finalYearSampling","finalMonthSampling","seasons","typeVegatation","methodsID","Mean HAND position (m)","Mean HAND position (m)","Mean P50 (MPa) ","Mean P (mg kg1)"
+"Annonaceae","Guatteria olivacea","generalist","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","20.4","(5.6–41.6)","-2.57","2.90"
+"Annonaceae","Guatteria megalophylla","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","3.3","(1.5–5.1)","-2.21","3.80"
+"Burseraceae","Protium gallosum","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","26.2","(6.2–37.9)","-2.54","3.43"
+"Burseraceae","Protium nitidifolium","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","25.7","(8.4–39.8)","-2.91","3.31"
+"Burseraceae","Protium trifoliolatum","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","23.2","(5.3–39.5)","-1.33","3.48"
+"Burseraceae","Protium hebetatum","generalist","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","19.49","(5.3–38.6)","-3.10","3.09"
+"Burseraceae","Protium grandifolium","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","10.80","(1.4–15.1)","-1.25","3.01"
+"Burseraceae","Tetragastris panamensis","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","25.7","(10.8–41.6)","-1.83","3.35"
+"Chrysobalanaceae","Licania heteromorfa","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","26.1","(6.2–39.8)","-3.33","3.24"
+"Chrysobalanaceae","Licania longistyla","generalist","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","15.2","(1.6–38.5)","-3.11","2.65"
+"Chrysobalanaceae","Licania lata","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","8.5","(1.7–21.1)","-1.71","3.16"
+"Fabaceae","Eperua duckeana","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","7.2","(1.6–14.4)","-0.88","3.12"
+"Fabaceae","Swartzia recurva","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","25.9","(5.8–43.6)","-3.66","3.18"
+"Fabaceae","Swartzia tomentifera","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","24.9","(5.3–39.3)","-3.64","3.44"
+"Fabaceae","Swartzia ulei","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","15.1","(1.7–34.7)","-2.20","3.69"
+"Fabaceae","Zygia racemosa","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","28.2","(8.5–41.6)","-4.10","3.28"
+"Fabaceae","Zygia ramiflora","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","29.8","(8.7–47.4)","-1.76","3.52"
+"Lecythidaceae","Eschweilera pseudodecolorans","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","29.7","(12.6–43.7)","-3.25","3.24"
+"Lecythidaceae","Eschweilera truncata","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","25.3","(8.0–41.4)","-2.43","3.22"
+"Lecythidaceae","Eschweilera coriacea","generalist","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","17.1","(2.8–37.5)","-1.72","3.32"
+"Moraceae","Helianthostylis sprucei","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","26.5","(8.4–41.6)","-4.04","3.07"
+"Myristicaceae","Virola venosa","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","27.68","(8.7–41.4)","-0.84","3.24"
+"Myristicaceae","Iryanthera juruensis","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","14.3","(1.8–37.1)","-0.67","3.67"
+"Myristicaceae","Iryanthera ulei","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","16.2","(2.3–38.2)","-0.56","4.15"
+"Rutaceae","Adiscanthus fusciflorus","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","2.2","(1.4–4.7)","-1.08","3.56"
+"Sapotaceae","Micropholis williamii","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","23.4","(6.2–42.8)","-1.78","3.22"
+"Sapotaceae","Chrysophyllum sanguinolentum","valley","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","9.5","(1.6–22.4)","-2.47","3.44"
+"Violaceae","Rinorea racemosa","plateau","Amazonas","Manaus","Reserva Florestal Adolpho Ducke","-2.916667","-59.966667",,,,,,,,"pneumatic method (Pereira
+et al., 2016; Zhang et al., 2018)","26.2","(5.7–41.6)","-4.18","3.33"

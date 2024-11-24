@@ -35,6 +35,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   # email
 }
 
+
 # Barros et all 2015
 {
   # igual à Barros et all 2019
@@ -113,8 +114,75 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
 
 # Bittencourt et all 2020
 {
-  # csv
+  name_file <- paste0(path_data, '\\Bittencourt et all 2020.csv')
+  spp <- readr::read_csv(name_file, 
+                         locale = readr::locale(encoding = "UTF-8"),
+                         show_col_types = FALSE)
+  
+  col <- colnames(spp)
+  col
+  
+  col_ini <- 14
+  
+  loc <- spp$Plot %>% unique()
+  loc
+  
+  sourceID <- 'Bittencourt et all 2020'
+  
+  i=1
+  for(i in 1:NROW(loc))
+  {
+    
+    x <- spp %>% dplyr::filter(Plot == loc[i])
+    
+    ii = 1
+    for ( ii in col_ini:NROW(col))
+    {
+      value <- x[,col[ii]] %>% as.vector() %>% data.frame()
+      
+      colnames(value) <- 'value'
+      
+      
+      data <- rbind(data, 
+                    data.frame(traitID	= col[ii],
+                               unitOfMeasure	= '',
+                               methodsID	= rep('',NROW(x)),
+                               
+                               value	= value[,1],
+                               
+                               family	= '',
+                               species	= x$Species,
+                               sourceID	= rep(sourceID, NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= x$initialMonthSampling,#ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
+                               initialDaySampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
+                               finalMonthSampling	= x$finalMonthSampling, #rep('',NROW(x)),
+                               finalDaySampling	= rep('',NROW(x)),
+                               seasons	= x$seasons,
+                               weatherAnomaly	= rep('',NROW(x)),
+                               lifeStage	= rep('adult',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
+                               altitude	= rep('',NROW(x)),
+                               typeVegatation = x$typeVegatation,
+                               notes = rep('',NROW(x)),#paste0('mean, n:',x$n),
+                               stringsAsFactors = FALSE
+                    ))
+      
+      
+    } 
+    
+    
+  }
+  
+  View(data)
 }
+
 
 # ok - Brum et all 2018
 {
@@ -127,8 +195,9 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   loc <- spp$site %>% unique()
   
   col <- colnames(spp)
+  col
   
-  col_ini <- 4
+  col_ini <- 16
   
   sourceID <- 'Brum_et_al_2018'
   
@@ -156,23 +225,24 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
                                family	= x$family,
                                species	= x$species,
                                sourceID	= rep(sourceID, NROW(x)),
-                               initialYearSampling	= rep('',NROW(x)),
-                               initialMonthSampling	= rep('',NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= x$initialMonthSampling,#ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
                                initialDaySampling	= rep('',NROW(x)),
-                               finalYearSampling	= rep('',NROW(x)),
-                               finalMonthSampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
+                               finalMonthSampling	= x$finalMonthSampling, #rep('',NROW(x)),
                                finalDaySampling	= rep('',NROW(x)),
-                               seasons	= rep('',NROW(x)),
+                               seasons	= x$seasons,
                                weatherAnomaly	= rep('',NROW(x)),
                                lifeStage	= rep('adult',NROW(x)),
-                               country	= rep('',NROW(x)),
-                               stateProvince = rep('',NROW(x)),
-                               municipality = rep('',NROW(x)),
-                               localidade	= rep(loc[i],NROW(x)),
-                               decimalLatitude	= rep('',NROW(x)),
-                               decimalLongitude	= rep('',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
                                altitude	= rep('',NROW(x)),
-                               typeVegatation = rep('',NROW(x)),
+                               typeVegatation = x$typeVegatation,
+                               notes = rep('',NROW(x)),
                                stringsAsFactors = FALSE
                     ))
       
@@ -208,9 +278,9 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   
   col <- colnames(spp)
   
-  col_ini <- 6
+  col_ini <- 16
   
-  sourceID <- 'Garcia_et_al_2023'
+  sourceID <- 'Garcia et all 2023'
   
   i=1
   for(i in 1:NROW(loc))
@@ -235,24 +305,24 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
                                family	= x$family,
                                species	= x$species.name,
                                
-                               sourceID	= rep(sourceID, NROW(x)),
-                               initialYearSampling	= rep('',NROW(x)),
-                               initialMonthSampling	= rep('',NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	=rep('',NROW(x)),
                                initialDaySampling	= rep('',NROW(x)),
-                               finalYearSampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
                                finalMonthSampling	= rep('',NROW(x)),
                                finalDaySampling	= rep('',NROW(x)),
-                               seasons	= rep('',NROW(x)),
+                               seasons	= x$seasons,
                                weatherAnomaly	= rep('',NROW(x)),
                                lifeStage	= rep('adult',NROW(x)),
-                               country	= rep('',NROW(x)),
-                               stateProvince = rep('',NROW(x)),
-                               municipality = rep('',NROW(x)),
-                               localidade	= rep(loc[i],NROW(x)),
-                               decimalLatitude	= x$Latitude,
-                               decimalLongitude	= x$Longtitude,
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
                                altitude	= rep('',NROW(x)),
-                               typeVegatation = rep('',NROW(x)),
+                               typeVegatation = x$typeVegatation,
+                               notes = rep('',NROW(x)),
                                stringsAsFactors = FALSE
                     ))
       
@@ -264,14 +334,82 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   View(data)
 }
 
+
 # Mattos el all 2023
 {
   # Barros et all 2019 & Oliveira et all 2019
 }
 
+
 # Oliveira et all 2019
+# Localidade ou Habitat association ?
 {
-  # tabela media csv
+  
+  name_file <- paste0(path_data, '\\Oliveira et all 2019.csv')
+  spp <- readr::read_csv(name_file, 
+                         locale = readr::locale(encoding = "UTF-8"),
+                         show_col_types = FALSE)
+  
+  loc <- spp$Localidade %>% unique()
+  
+  col <- colnames(spp)
+  col
+  
+  col_ini <- 17
+  
+  sourceID <- 'Oliveira et all 2019'
+  
+  i=1
+  for(i in 1:NROW(loc))
+  {
+    
+    x <- spp %>% dplyr::filter(Localidade == loc[i])
+    
+    ii = 4
+    for ( ii in col_ini:NROW(col))
+    {
+      value <- x[,col[ii]] %>% as.vector() %>% data.frame()
+      
+      colnames(value) <- 'value'
+      
+      
+      data <- rbind(data, 
+                    data.frame(traitID	= col[ii],
+                               unitOfMeasure	= '',
+                               methodsID	= x$methodsID,
+                               
+                               value	= value[,1],
+                               
+                               family	= x$Family,
+                               species	= x$Species,
+                               sourceID	= rep(sourceID, NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= x$initialMonthSampling,#ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
+                               initialDaySampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
+                               finalMonthSampling	= x$finalMonthSampling, #rep('',NROW(x)),
+                               finalDaySampling	= rep('',NROW(x)),
+                               seasons	= x$seasons,
+                               weatherAnomaly	= rep('',NROW(x)),
+                               lifeStage	= rep('adult',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
+                               altitude	= rep('',NROW(x)),
+                               typeVegatation = x$typeVegatation,
+                               notes = paste0('Habitat association: ',x$`Habitat association`),
+                               stringsAsFactors = FALSE
+                    ))
+      
+      
+    } 
+    
+    
+  }
+  View(data)
 }
 
 # Powell et all 2017
@@ -281,8 +419,74 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
 
 # Rowland et all 2015
 {
-  # email
+  
+  name_file <- paste0(path_data, '\\Rowland et all 2015.csv')
+  spp <- readr::read_csv(name_file, 
+                         locale = readr::locale(encoding = "UTF-8"),
+                         show_col_types = FALSE)
+  
+  loc <- spp$Plot %>% unique()
+  
+  col <- colnames(spp)
+  col
+  
+  col_ini <- 17
+  
+  sourceID <- 'Rowland et all 2015'
+  
+  i=1
+  for(i in 1:NROW(loc))
+    {
+    
+    x <- spp %>% dplyr::filter(Plot == loc[i])
+    
+    ii = 4
+    for ( ii in col_ini:NROW(col))0
+    {
+      value <- x[,col[ii]] %>% as.vector() %>% data.frame()
+      
+      colnames(value) <- 'value'
+      
+      
+      data <- rbind(data, 
+                    data.frame(traitID	= col[ii],
+                               unitOfMeasure	= '',
+                               methodsID	= x$methodsID,
+                               
+                               value	= value[,1],
+                               
+                               family	= rep('', NROW(x)),
+                               species	= x$Species,
+                               sourceID	= rep(sourceID, NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= x$initialMonthSampling,#ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
+                               initialDaySampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
+                               finalMonthSampling	= x$finalMonthSampling, #rep('',NROW(x)),
+                               finalDaySampling	= rep('',NROW(x)),
+                               seasons	= x$seasons,
+                               weatherAnomaly	= rep('',NROW(x)),
+                               lifeStage	= rep('adult',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
+                               altitude	= rep('',NROW(x)),
+                               typeVegatation = x$typeVegatation,
+                               notes = x$notes,
+                               stringsAsFactors = FALSE
+                    ))
+      
+      
+    } 
+    
+    
+  }
+  View(data)
 }
+
 
 # Tavares et all 2023
 {
@@ -295,9 +499,9 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   
   col <- colnames(spp)
   
-  col_ini <- 7
+  col_ini <- 21
   
-  sourceID <- 'Tavares_et_al_2023'
+  sourceID <- 'Tavares et all 2023'
   
   i=1
   for(i in 1:NROW(loc))
@@ -316,30 +520,31 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
       data <- rbind(data, 
                     data.frame(traitID	= col[ii],
                                unitOfMeasure	= '',
-                               methodsID	= rep('',NROW(x)),
+                               methodsID	= x$methodsID,
                                
                                value	= value[,1],
                                
-                               family	= x$Family,
+                               family	= rep('', NROW(x)),
                                species	= x$Species,
                                sourceID	= rep(sourceID, NROW(x)),
-                               initialYearSampling	= rep('',NROW(x)),
-                               initialMonthSampling	= rep('',NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= x$initialMonthSampling,#ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
                                initialDaySampling	= rep('',NROW(x)),
-                               finalYearSampling	= rep('',NROW(x)),
-                               finalMonthSampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
+                               finalMonthSampling	= x$finalMonthSampling, #rep('',NROW(x)),
                                finalDaySampling	= rep('',NROW(x)),
-                               seasons	= rep('',NROW(x)),
+                               seasons	= x$seasons,
                                weatherAnomaly	= rep('',NROW(x)),
                                lifeStage	= rep('adult',NROW(x)),
-                               country	= rep('',NROW(x)),
-                               stateProvince = rep('',NROW(x)),
-                               municipality = rep('',NROW(x)),
-                               localidade	= rep(loc[i],NROW(x)),
-                               decimalLatitude	= rep('',NROW(x)),
-                               decimalLongitude	= rep('',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
                                altitude	= rep('',NROW(x)),
                                typeVegatation = x$Forest,
+                               notes = x$notes,
                                stringsAsFactors = FALSE
                     ))
       
@@ -351,16 +556,81 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
   View(data)
 }
 
-Ziegler et all 2023
+# Ziegler et all 2023
+{
+  # email
+}
 
 
-
-
-
-
-# Tavares_et_al_2023
-
-
+# Rowland et all 2015
+{
+  
+  name_file <- paste0(path_data, '\\Rowland et all 2020.csv')
+  spp <- readr::read_csv(name_file, 
+                         locale = readr::locale(encoding = "UTF-8"),
+                         show_col_types = FALSE)
+  
+  loc <- spp$Plot %>% unique()
+  
+  col <- colnames(spp)
+  col
+  
+  col_ini <- 17
+  
+  sourceID <- 'Rowland et all 2020'
+  
+  i=1
+  for(i in 1:NROW(loc))
+  {
+    
+    x <- spp %>% dplyr::filter(Plot == loc[i])
+    
+    ii = 4
+    for ( ii in col_ini:NROW(col))0
+    {
+      value <- x[,col[ii]] %>% as.vector() %>% data.frame()
+      
+      colnames(value) <- 'value'
+      
+      
+      data <- rbind(data, 
+                    data.frame(traitID	= col[ii],
+                               unitOfMeasure	= '',
+                               methodsID	= x$methodsID,
+                               
+                               value	= value[,1],
+                               
+                               family	= rep('', NROW(x)),
+                               species	= x$Species,
+                               sourceID	= rep(sourceID, NROW(x)),
+                               initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
+                               initialMonthSampling	= x$initialMonthSampling,#ifelse(col[ii]== "ΨnonENSO", x$mes_nonenso, x$mes_enso),
+                               initialDaySampling	= rep('',NROW(x)),
+                               finalYearSampling	= x$finalYearSampling, #rep('',NROW(x)),
+                               finalMonthSampling	= x$finalMonthSampling, #rep('',NROW(x)),
+                               finalDaySampling	= rep('',NROW(x)),
+                               seasons	= x$seasons,
+                               weatherAnomaly	= rep('',NROW(x)),
+                               lifeStage	= rep('adult',NROW(x)),
+                               country	= x$Country,
+                               stateProvince = x$State_Province,
+                               municipality = x$County,
+                               localidade	= x$Localidade,
+                               decimalLatitude	= x$decimalLatitude,
+                               decimalLongitude	= x$decimalLongitude,
+                               altitude	= rep('',NROW(x)),
+                               typeVegatation = x$typeVegatation,
+                               notes = x$notes,
+                               stringsAsFactors = FALSE
+                    ))
+      
+      
+    } 
+    
+    
+  }
+  View(data)
+}
 
 
 
