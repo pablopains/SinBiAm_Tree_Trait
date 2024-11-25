@@ -304,6 +304,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
                                
                                family	= x$family,
                                species	= x$species.name,
+                               sourceID	= rep(sourceID, NROW(x)),
                                
                                initialYearSampling	=  x$initialYearSampling,# ifelse(col[ii]=='ΨnonENSO', x$ano_nonenso, x$ano_enso),
                                initialMonthSampling	=rep('',NROW(x)),
@@ -323,8 +324,8 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
                                altitude	= rep('',NROW(x)),
                                typeVegatation = x$typeVegatation,
                                notes = rep('',NROW(x)),
-                               stringsAsFactors = FALSE
-                    ))
+                               stringsAsFactors = FALSE)
+                    )
       
       
     } 
