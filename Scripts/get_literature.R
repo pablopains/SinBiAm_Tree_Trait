@@ -108,7 +108,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
   }
   
-  View(data)
+  # View(data)
 }
 
 
@@ -180,7 +180,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
   }
   
-  View(data)
+  # View(data)
 }
 
 
@@ -251,7 +251,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
     
   }
-  View(data)
+  # View(data)
 }
 
 
@@ -332,7 +332,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
     
   }
-  View(data)
+  # View(data)
 }
 
 
@@ -410,7 +410,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
     
   }
-  View(data)
+  # View(data)
 }
 
 # Powell et all 2017
@@ -485,7 +485,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
     
   }
-  View(data)
+  # View(data)
 }
 
 
@@ -554,7 +554,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
     
   }
-  View(data)
+  # View(data)
 }
 
 # Ziegler et all 2023
@@ -630,7 +630,7 @@ path_data <- 'C:\\SinBiAm_Tree_Trait - github.com\\SinBiAm_Tree_Trait\\Data\\bib
     
     
   }
-  View(data)
+  # View(data)
 }
 
 
